@@ -13,7 +13,7 @@ If you don't have it installed already, you can follow [this guide](https://pack
 
 ## First Thing’s First
 
-<!--- TODO:// Do we need to create a project first? Or is one created for us by default?) --->
+<!--- TODO: Do we need to create a project first? Or is one created for us by default?) --->
 
 Let’s head to ABCD Github repo, and examine it. Notice it contains the program file, `mnist_cnn.py`, and a `requirements.txt` file. This code trains a simple convnet on the MNIST dataset (borrowed from [Keras examples](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)).  
 
@@ -38,7 +38,7 @@ $ pip install -r requirements.txt
 
 you can try to run it using `python mnist_cnn.py`
 
-<!--- TODO:// Add a gif showing training progress here) --->
+<!--- TODO: Add a gif showing training progress here) --->
 
 As you can see, the code runs the experiment in 12 epochs.
 
@@ -62,7 +62,7 @@ Now let's install the new requirements:
 $ pip install -r requirements.txt
 ```
 
-<!--- TODO:// Need to add instructions for running ml auth init -->
+<!--- TODO: Need to add instructions for running ml auth init -->
 
 ## Adding a callback to Keras
 
@@ -128,7 +128,7 @@ Open the [MissingLink console](https://missinglink.ai/console) and click on the 
 
 You should see the list of experiments which belong to your project. In case you haven't run any experiments under this project, the list should be empty.
 
-<!--- TODO:// Add a screenshot) --->
+<!--- TODO: Add a screenshot) --->
 
 Let's go back to the terminal and run our script again:
 
