@@ -52,7 +52,43 @@ As you can see, the code runs the experiment in 12 epochs.
 
 # Integrating the MissingLink SDK
 
-Now, let's see how by adding a few lines of code, we're able to follow our experiment in MissingLinks web dashboard.
+Now, let's see how by adding a few lines of code and a few commands, we're able to follow our experiment in MissingLinks web dashboard.
+
+## Install and init the MissingLink CLI
+
+MissingLink provides a CLI (command line interface) which allows you to control everything from the terminal.
+Let's go ahead and install it:
+
+```bash
+$ pip install MissingLink
+```
+
+Next we want to authenticate with the MissingLink backend.
+
+---
+**NOTE**  
+Once you run the following command, a browser window will launch and navigate to the MissingLink website.
+If you're not logged in, you will be asked to login. When the process is completed, you will get a message to go back to the console.
+
+---
+
+```bash
+$ ml auth init
+```
+
+## Creating a project
+
+MissingLink allows you to manage several projects. Let's create a new project for this tutorial:
+
+```bash
+$ ml projects create --display-name tutorial1-keras
+```
+
+---
+**NOTE**  
+You can see a list of all your projects by running `ml projects list`.
+
+---
 
 ## Updating the requirements
 
@@ -70,8 +106,6 @@ Now let's install the new requirements:
 ```bash
 $ pip install -r requirements.txt
 ```
-
-<!--- TODO: Need to add instructions for running ml auth init -->
 
 ## Adding a callback to Keras
 
@@ -135,7 +169,7 @@ Let's open the experiments view under the MissingLink dashboard.
 
 Open the [MissingLink console](https://missinglink.ai/console) and click on the projects toolbar button on the left. Choose the <some project> project.
 
-You should see the list of experiments which belong to your project. In case you haven't run any experiments under this project, the list should be empty.
+You should see the list of experiments which belong to your project. Since we haven't run any experiments under this project, the list should be empty.
 
 <!--- TODO: Add a screenshot) --->
 
