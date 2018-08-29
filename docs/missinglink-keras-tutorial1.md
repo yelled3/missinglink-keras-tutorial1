@@ -15,28 +15,36 @@ If you don't have it installed already, you can follow [this guide](https://pack
 
 <!--- TODO: Do we need to create a project first? Or is one created for us by default?) --->
 
-Let’s head to ABCD Github repo, and examine it. Notice it contains the program file, `mnist_cnn.py`, and a `requirements.txt` file. This code trains a simple convnet on the MNIST dataset (borrowed from [Keras examples](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)).  
+Let’s head to the MissingLink Kera Tutorial 1 [Github repository](https://github.com/missinglinkai/missinglink-keras-tutorial1), and examine it. Notice it contains the program file, `mnist_cnn.py`, and a `requirements.txt` file. This code trains a simple convnet on the MNIST dataset (borrowed from [Keras examples](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)).  
 
-In order for us to make changes, we will need to create a copy of the repo and fetch it.  
-Please go ahead and create a fork of this repository, by clicking on 123.
+In order for us to make changes, we will need to create a copy of the repo and fetch it to your local development environment.  
+Please go ahead and create a fork of the [tutorial repository](https://github.com/missinglinkai/missinglink-keras-tutorial1), by clicking on the fork button.
 
-Next, let’s fetch the forked repo:  
+![Fork on Github](../images/fork_repo.png)
+
+<!--- TODO: take another screenshot when we make the repo public --->
+
+Next, let’s copy fetch the url of your forked repository and fetch it locally:  
 
 ```bash
-$ git clone <paste_git_link>
+$ git clone https://github.com/<YOUR_GITHUB_USERNAME>/missinglink-keras-tutorial1
 ```
 
-Now that the code is on your machine, let's prepare our environment:
+Now that the code is on your machine, let's open terminal and prepare our environment:
 
 ```bash
 $ python3 -m virtualenv env
-$ source .venv_example/bin/activate
+$ source env/bin/activate
 $ pip install -r requirements.txt
 ```
 
 ## Let's Run It
 
-you can try to run it using `python mnist_cnn.py`
+You can try to run the example:
+
+```bash
+$ python mnist_cnn.py
+```
 
 <!--- TODO: Add a gif showing training progress here) --->
 
@@ -48,7 +56,8 @@ Now, let's see how by adding a few lines of code, we're able to follow our exper
 
 ## Updating the requirements
 
-Let's add the MissingLink SDK as a requirement under `requirements.txt` file:
+Let's go ahead and open the code in your favorite IDE.
+We need to add the MissingLink SDK as a requirement under `requirements.txt` file:
 
 ```
 tensorflow
