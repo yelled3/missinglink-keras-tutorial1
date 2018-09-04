@@ -95,10 +95,10 @@ You can see a list of all your projects by running `ml projects list`.
 Let's go ahead and open the code in your favorite IDE.
 We need to add the MissingLink SDK as a requirement under `requirements.txt` file:
 
-```
+```diff
 tensorflow
 keras
-missinglink
++missinglink
 ```
 
 Now let's install the new requirements:
@@ -110,10 +110,10 @@ $ pip install -r requirements.txt
 ## Adding a callback to Keras
 
 Open the `mnist_cnn.py` script file and import the MissingLink SDK:
-```python
+```diff
 // ...
 from keras import backend as K
-import missinglink
++import missinglink
 
 batch_size = 128
 // ...
@@ -121,14 +121,14 @@ batch_size = 128
 
 Now we need to initialize a callback object that we could have Keras call during the different stages of the experiment.
 
-```python
+```diff
 // ...
 import missinglink
 
-missinglink_callback = missinglink.KerasCallback(
-    owner_id="your-owner-id",
-    project_token="your-project-token"
-)
++missinglink_callback = missinglink.KerasCallback(
++    owner_id="your-owner-id",
++    project_token="your-project-token"
++)
  
 batch_size = 128
 // ...
@@ -137,14 +137,14 @@ batch_size = 128
 Finally let's have Keras use our callback object. We want to add calls during fitting and test stages.  
 Let's scroll all the way to the bottom of the file and add the MissingLink callback to the `fit()` function call:
 
-```python
+```diff
 // ...
 model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=epochs,
           verbose=1,
           validation_data=(x_test, y_test),
-          callbacks=[missinglink_callback])
++         callbacks=[missinglink_callback])
 
 score = model.evaluate(x_test, y_test, verbose=0)
 // ...
@@ -152,12 +152,13 @@ score = model.evaluate(x_test, y_test, verbose=0)
 
 Lastly, we want to let the MissingLink SDK know we're starting the testing stage:
 
-```python
+```diff
 // ...
           callbacks=[missinglink_callback])
 
-with missinglink_callback.test(model):
-    score = model.evaluate(x_test, y_test, verbose=0)
+-score = model.evaluate(x_test, y_test, verbose=0)
++with missinglink_callback.test(model):
++    score = model.evaluate(x_test, y_test, verbose=0)
 
 print('Test loss:', score[0])
 // ...
