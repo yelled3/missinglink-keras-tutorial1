@@ -11,6 +11,10 @@ If you don't have it installed already, you can follow [this guide](https://pack
 
 # Getting Started
 
+## Prerequisites
+
+To run this tutorial you will need a MissingLink account. If don't already have one, please head to the MissingLink [website](https://missinglink.ai) and sign up.
+
 ## First Thing’s First
 
 <!--- TODO: Do we need to create a project first? Or is one created for us by default?) --->
