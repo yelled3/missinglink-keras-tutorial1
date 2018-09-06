@@ -15,7 +15,7 @@ If you don't have it installed already, you can follow [this guide](https://pack
 
 <!--- TODO: Do we need to create a project first? Or is one created for us by default?) --->
 
-Let’s head to the MissingLink Kera Tutorial 1 [Github repository](https://github.com/missinglinkai/missinglink-keras-tutorial1), and examine it. Notice it contains the program file, `mnist_cnn.py`, and a `requirements.txt` file. This code trains a simple convnet on the MNIST dataset (borrowed from [Keras examples](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)).  
+Let’s head to the MissingLink Keras Tutorial 1 [Github repository](https://github.com/missinglinkai/missinglink-keras-tutorial1), and examine it. Notice it contains the program file, `mnist_cnn.py`, and a `requirements.txt` file. This code trains a simple convnet on the MNIST dataset (borrowed from [Keras examples](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)).  
 
 In order for us to make changes, we will need to create a copy of the repo and fetch it to your local development environment.  
 Please go ahead and create a fork of the [tutorial repository](https://github.com/missinglinkai/missinglink-keras-tutorial1), by clicking on the fork button.
@@ -121,14 +121,13 @@ batch_size = 128
 
 Now we need to initialize a callback object that we could have Keras call during the different stages of the experiment.
 
+<!--- TODO: Make sure it works without user id and project id / token) --->
+
 ```diff
 // ...
 import missinglink
 
-+missinglink_callback = missinglink.KerasCallback(
-+    owner_id="your-owner-id",
-+    project_token="your-project-token"
-+)
++missinglink_callback = missinglink.KerasCallback()
  
 batch_size = 128
 // ...
@@ -184,6 +183,60 @@ You should see the initialization and the beginning of training. If you switch b
 
 ---
 **NOTE**  
-Feel free to browser through the table and the  different tabs of the experiment you're running, and see how the metrics update as the experiment progresses. This tutorial does not include an explanation about these screens. For a detailed walkthrough, click here.
+Feel free to browser through the table and the different tabs of the experiment you're running, and see how the metrics update as the experiment progresses. This tutorial does not include an explanation about these screens. For a detailed walkthrough, click here.
 
 ---
+
+## Commit the Code Changes
+
+Let's commit our code to the repo. Go to your terminal and run the following commands:
+
+```bash
+$ git add .
+$ git commit -m "integrate with missinglink"
+$ git push
+```
+
+# Adding Resource Management
+
+Now that we have everything working so nicely on our local workstation, we would like to take the integration to the next level. The next step would be to run the experiment on a managed server. For the sake of simplicity, we will not connect real GPU servers in this tutorial, but rather emulate a real server on our local workstation. But it should definitely give you a sense of how it would work when running on real servers.
+
+## The Missing Step
+
+The most important step for setting up resource management in your project. For that you will basically need to install missinglink on your existing machines, or give us limited access to your cloud hosting account so we can spin up machines for you. As mentioned above, we will not do this step in this tutorial.
+
+## Let's emulate
+
+Now for some magic; We'll need to run a command for laucning the local server using the MissingLink CLI.
+Let's run the following in our terminal:
+
+```bash
+$ ml run local --git-repo https://github.com/<YOUR_GITHUB_USERNAME>/missinglink-keras-tutorial1 --command "python mnist_cnn.py"
+```
+
+This command would take the code you've committed to your forked repository, clone it to your local server, install the requirements and run `python mnist_cnn.py`.
+
+---
+**NOTE**  
+The command for running the same thing on a real server is very similar.
+
+---
+
+## Observe the progress
+
+If everything goes well, we can now observe the progress of our experiment, running on a managed server, right in the dashboard.  
+Go to https://missinglink.ai/console and click on the Resource Groups toolbar button on the left. You should see a newly created resource group representing our local emulated server.
+
+<!--- TODO: Add a screenshot of the resource group --->
+
+---
+**NOTE**  
+This resource group is temporary and would disappear from the list once the job we're running is completed.
+
+---
+
+Click on the line showing the emulated server - you would be navigated to see the progress of our experiment.
+
+<!--- TODO: Add a gif showing the progress of the logs --->
+
+Let's go see the progress of our experiment. Click on the projects toolbar button on the left and choose the <some project> project. You should see the new experiment's progress.
