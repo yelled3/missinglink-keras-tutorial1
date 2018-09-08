@@ -230,7 +230,7 @@ Now for some magic; We'll need to run a command for laucning the local server us
 Let's run the following in our terminal:
 
 ```bash
-$ ml run local --git-repo https://github.com/<YOUR_GITHUB_USERNAME>/missinglink-keras-tutorial1 --command "python mnist_cnn.py"
+$ ml run local --git-repo git@github.com:<YOUR_GITHUB_USERNAME>/missinglink-keras-tutorial1.git --command "python mnist_cnn.py"
 ```
 
 This command would take the code you've committed to your forked repository, clone it to your local server, install the requirements and run `python mnist_cnn.py`.
