@@ -40,7 +40,7 @@ Next, let’s open our terminal and git clone using the pasted url of your forke
 $ git clone git@github.com:<YOUR_GITHUB_USERNAME>/missinglink-keras-tutorial1.git
 ```
 
-Now that the code is on your machine, let's open terminal and prepare our environment:
+Now that the code is on your machine, let's prepare our environment:
 
 ```bash
 $ python3 -m virtualenv env
@@ -96,7 +96,7 @@ $ ml projects create --display-name tutorials
 
 ---
 **NOTE**  
-You can see a list of all your projects by running `ml projects list`.
+You can see a list of all your projects by running `ml projects list`, or obviously by going to the [MissingLink web console](https://missinglink.ai/console).
 
 ---
 
@@ -122,10 +122,14 @@ $ pip install -r requirements.txt
 Open the `mnist_cnn.py` script file and import the MissingLink SDK:
 ```diff
 // ...
+from keras.layers import Dense, Dropout, Flatten
+from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 +import missinglink
 
 batch_size = 128
+num_classes = 10
+epochs = 12
 // ...
 ```
 
@@ -135,11 +139,15 @@ Now we need to initialize a callback object that we could have Keras call during
 
 ```diff
 // ...
+from keras.layers import Conv2D, MaxPooling2D
+from keras import backend as K
 import missinglink
-
++
 +missinglink_callback = missinglink.KerasCallback()
  
 batch_size = 128
+num_classes = 10
+epochs = 12
 // ...
 ```
 
@@ -156,6 +164,8 @@ model.fit(x_train, y_train,
 +         callbacks=[missinglink_callback])
 
 score = model.evaluate(x_test, y_test, verbose=0)
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
 // ...
 ```
 
@@ -163,13 +173,19 @@ Lastly, we want to let the MissingLink SDK know we're starting the testing stage
 
 ```diff
 // ...
+model.fit(x_train, y_train,
+          batch_size=batch_size,
+          epochs=epochs,
+          verbose=1,
+          validation_data=(x_test, y_test),
           callbacks=[missinglink_callback])
 
 -score = model.evaluate(x_test, y_test, verbose=0)
 +with missinglink_callback.test(model):
 +    score = model.evaluate(x_test, y_test, verbose=0)
-
++
 print('Test loss:', score[0])
+print('Test accuracy:', score[1])
 // ...
 ```
 
@@ -222,11 +238,11 @@ The next step for us would be to run the experiment on a managed server. For the
 
 ## The Missing Step
 
-The most important step for setting up resource management in your project. For that you will basically need to install missinglink on your existing machines, or give us limited access to your cloud hosting account so we can spin up machines for you. As mentioned above, we will not do this step in this tutorial.
+The most important step for setting up resource management in your project would be to give us access to your training machines. For that you will basically need to install missinglink on your existing machines, or give us limited access to your cloud hosting account so we can spin up machines for you. As mentioned above, we will not do this step in this tutorial.
 
 ## Let's emulate
 
-Now for some magic; We'll need to run a command for laucning the local server using the MissingLink CLI.
+Now for some magic; We'll need to run a command for launching the local server using the MissingLink CLI.
 Let's run the following in our terminal:
 
 ```bash
@@ -254,8 +270,8 @@ This resource group is temporary and would disappear from the list once the job 
 
 ---
 
-Click on the line showing the emulated server - you would be navigated to see the progress of our experiment.
+Click on the line showing the emulated server - you would be navigated to see the logs of the task running in our local server.
 
 <!--- TODO: Add a gif showing the progress of the logs --->
 
-Let's go see the progress of our experiment. Click on the projects toolbar button on the left and choose the `tutorials` project. You should see the new experiment's progress.
+Let's go see the actual progress of our experiment. Click on the projects toolbar button on the left and choose the `tutorials` project. You should see the new experiment's progress.
