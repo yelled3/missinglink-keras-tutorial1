@@ -2,18 +2,18 @@
 
 In this tutorial we will take an existing implementation of a deep learning algorithm and integrate it into the MissingLink system. We will take a code sample training on the MNIST dataset using a convolutional neural network, add the MissingLink SDK and eventually run the experiment in a MissingLink controlled emulated server.
 
+# Getting Started
+
+## Prerequisites
+
+To run this tutorial you will need a MissingLink account. If don't already have one, please [head to the MissingLink website and sign up](https://missinglink.ai/console/signup/userdetails).
+
 ---
 **NOTE**  
 This tutorial is assuming you’re using virtualenv to scope your working environment.
 If you don't have it installed already, you can follow [this guide](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/).
 
 ---
-
-# Getting Started
-
-## Prerequisites
-
-To run this tutorial you will need a MissingLink account. If don't already have one, please head to the MissingLink [website](https://missinglink.ai) and sign up.
 
 ## First Thing’s First
 
@@ -206,7 +206,11 @@ $ git push
 
 # Adding Resource Management
 
-Now that we have everything working so nicely on our local workstation, we would like to take the integration to the next level. The next step would be to run the experiment on a managed server. For the sake of simplicity, we will not connect real GPU servers in this tutorial, but rather emulate a real server on our local workstation. But it should definitely give you a sense of how it would work when running on real servers.
+Now that we have everything working so nicely on our local workstation, we would like to take the integration to the next level. MissingLink can help you manage your servers so that you don't have to worry about it.
+
+<!--- TODO: Link to a good RM explanation --->
+
+The next step for us would be to run the experiment on a managed server. For the sake of simplicity, we will not connect real GPU servers in this tutorial, but rather emulate a real server on our local workstation. But it should definitely give you a sense of how it would work when running on real servers.
 
 ## The Missing Step
 
