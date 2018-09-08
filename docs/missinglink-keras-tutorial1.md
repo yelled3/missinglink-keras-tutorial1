@@ -17,8 +17,6 @@ To run this tutorial you will need a MissingLink account. If don't already have 
 
 ## First Thing’s First
 
-<!--- TODO: Do we need to create a project first? Or is one created for us by default?) --->
-
 Let’s head to the MissingLink Keras Tutorial 1 [Github repository](https://github.com/missinglinkai/missinglink-keras-tutorial1), and examine it. Notice it contains the program file, `mnist_cnn.py`, and a `requirements.txt` file. This code trains a simple convnet on the MNIST dataset (borrowed from [Keras examples](https://github.com/keras-team/keras/blob/master/examples/mnist_cnn.py)).  
 
 In order for us to make changes, we will need to create a copy of the repo and fetch it to your local development environment.  
@@ -50,7 +48,7 @@ You can try to run the example:
 $ python mnist_cnn.py
 ```
 
-<!--- TODO: Add a gif showing training progress here) --->
+![Experiment progress in terminal](../images/tutorials-experiment-start.gif)
 
 As you can see, the code runs the experiment in 12 epochs.
 
@@ -85,7 +83,7 @@ $ ml auth init
 MissingLink allows you to manage several projects. Let's create a new project for this tutorial:
 
 ```bash
-$ ml projects create --display-name tutorial1-keras
+$ ml projects create --display-name tutorials
 ```
 
 ---
@@ -169,13 +167,6 @@ print('Test loss:', score[0])
 
 ## Run the Integrated Experiment
 We're now all set up to run the experiment again, but this time to see it in the Missing Link dashboard.  
-Let's open the experiments view under the MissingLink dashboard.
-
-Open the [MissingLink console](https://missinglink.ai/console) and click on the projects toolbar button on the left. Choose the <some project> project.
-
-You should see the list of experiments which belong to your project. Since we haven't run any experiments under this project, the list should be empty.
-
-<!--- TODO: Add a screenshot) --->
 
 Let's go back to the terminal and run our script again:
 
@@ -183,11 +174,23 @@ Let's go back to the terminal and run our script again:
 $ python mnist_cnn.py
 ```
 
-You should see the initialization and the beginning of training. If you switch back to the MissingLink dashboard, you will see your experiment appear.  
+You should see the initialization and the beginning of training. Now, let's switch back to the MissingLink dashboard.
+
+Open the [MissingLink console](https://missinglink.ai/console) and click on the projects toolbar button on the left. On this page you should see the list of experiments which belong to your project.
+
+![List of projects](../images/project_list_tutorials_project.png)
+
+Choose the `tutorials` project, you will see your experiment appear.  
+
+![Experiment in list](../images/tutorials_experiment.png)
+
+Now you can click anywhere on the experiment line to show more info about the experiment's progress.
+
+![Experiment detailed view](../images/tutorials_experiment_info.png)
 
 ---
 **NOTE**  
-Feel free to browser through the table and the different tabs of the experiment you're running, and see how the metrics update as the experiment progresses. This tutorial does not include an explanation about these screens. For a detailed walkthrough, click here.
+Feel free to browse through the table and the different tabs of the experiment you're running, and see how the metrics update as the experiment progresses. This tutorial does not include an explanation about these screens. For a detailed walkthrough, click here.
 
 ---
 
@@ -243,4 +246,4 @@ Click on the line showing the emulated server - you would be navigated to see th
 
 <!--- TODO: Add a gif showing the progress of the logs --->
 
-Let's go see the progress of our experiment. Click on the projects toolbar button on the left and choose the <some project> project. You should see the new experiment's progress.
+Let's go see the progress of our experiment. Click on the projects toolbar button on the left and choose the `tutorials` project. You should see the new experiment's progress.
