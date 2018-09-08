@@ -26,10 +26,18 @@ Please go ahead and create a fork of the [tutorial repository](https://github.co
 
 <!--- TODO: take another screenshot when we make the repo public --->
 
-Next, let’s copy fetch the url of your forked repository and fetch it locally:  
+After the forked repository was created, we will need to clone it locally in our workstation. Click the clone button in Github:
+
+![Fork on Github](../images/clone_button.png)
+
+Now copy the url for cloning the repository:
+
+![Copy repo url](../images/copy_repo_url_button.png)
+
+Next, let’s open our terminal and git clone using the pasted url of your forked repository:  
 
 ```bash
-$ git clone https://github.com/<YOUR_GITHUB_USERNAME>/missinglink-keras-tutorial1
+$ git clone git@github.com:<YOUR_GITHUB_USERNAME>/missinglink-keras-tutorial1.git
 ```
 
 Now that the code is on your machine, let's open terminal and prepare our environment:
