@@ -11,13 +11,14 @@ We start with a [code sample](https://github.com/keras-team/keras/blob/master/ex
 To run this tutorial you will need a MissingLink account. If you don't have one, please [head to the MissingLink website and sign up](https://missinglink.ai/console/signup/userdetails).
 
 ---
-**NOTE**  
+**NOTE**
+
 This tutorial assumes you’re using virtualenv to scope your working environment.
 If you don't have it installed, you can follow [this guide](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/) to get it set up.
 
 ---
 
-## First Things First
+## First things first ...
 
 Let’s head to the MissingLink Keras Tutorial 1 [Github repository](https://github.com/missinglinkai/missinglink-keras-tutorial1), and examine it.
 
@@ -51,7 +52,7 @@ $ source env/bin/activate
 $ pip install -r requirements.txt
 ```
 
-## Let's Run It
+## Let's run it
 
 You can try to run the example:
 
@@ -81,6 +82,7 @@ Next, authenticate with the MissingLink backend.
 
 ---
 **NOTE**
+
 Once you run the following command, a browser window will launch and navigate to the MissingLink website.
 
 If you're not logged in, you will be asked to log on. When the process is completed, you will get a message to go back to the terminal.
@@ -101,7 +103,8 @@ $ ml projects create --display-name tutorials
 ```
 
 ---
-**NOTE**  
+**NOTE**
+
 You can see a list of all your projects by running `ml projects list`, or obviously, by going to the [MissingLink web dashboard](https://missinglink.ai/console).
 
 ---
@@ -196,7 +199,7 @@ print('Test accuracy:', score[1])
 // ...
 ```
 
-## Run the Integrated Experiment
+## Run the integrated experiment
 We're all set up to run the experiment again, but this time to see it in the Missing Link dashboard.  
 
 Go back to the terminal and run the script again:
@@ -220,12 +223,13 @@ Now you can click anywhere on the experiment line to show more information about
 ![Experiment detailed view](../images/tutorials_experiment_info.png)
 
 ---
-**NOTE**  
+**NOTE**
+
 Feel free to browse through the table and the different tabs of the experiment you're running, and see how the metrics update as the experiment progresses. This tutorial does not include an explanation about these screens. 
 
 ---
 
-## Commit the Code Changes
+## Commit the code changes
 
 Let's commit our code to the repo. Go to your terminal and run the following commands:
 
@@ -247,7 +251,7 @@ MissingLink can help you manage your servers, so that you don't have to worry ab
 
 For the sake of simplicity, we will not connect real GPU servers in this tutorial, but rather emulate a real server on our local workstation. This all should definitely give you a sense of how it would work when running on real servers.
 
-## The Missing Step
+## The missing step
 
 The most important step for setting up Resource Management in your project would be to give us access to your training machines. To enable access, you will  need to install MissingLink on your existing machines, or give us limited access to your cloud hosting account so we can spin up machines for you. As mentioned above, we will not perform this step in this tutorial.
 
@@ -264,7 +268,8 @@ $ ml run local --git-repo git@github.com:<YOUR_GITHUB_USERNAME>/missinglink-kera
 This command takes the code you've committed to your forked repository, clones it to your local server, installs the requirements, and runs `python mnist_cnn.py`.
 
 ---
-**NOTE**  
+**NOTE**
+
 The command for running the same thing on a real server is very similar.
 
 ---
@@ -278,7 +283,8 @@ Go to https://missinglink.ai/console and click the Resource Groups toolbar butto
 <!--- TODO: Add a screenshot of the resource group --->
 
 ---
-**NOTE**  
+**NOTE**
+  
 This resource group is temporary and will disappear from the list once the job we're running is completed.
 
 ---
