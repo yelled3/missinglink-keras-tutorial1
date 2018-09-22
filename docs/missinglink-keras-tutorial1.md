@@ -288,7 +288,7 @@ If everything goes well, we can now observe the progress of our experiment, runn
 
 Go to https://missinglink.ai/console and click the Resource Groups toolbar button on the left. You should see a newly created resource group representing our local emulated server.
 
-<!--- TODO: Add a screenshot of the resource group --->
+![Local resource group](../images/local_resource_group.png)
 
 ---
 **NOTE**
