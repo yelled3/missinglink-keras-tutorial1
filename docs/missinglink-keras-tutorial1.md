@@ -286,7 +286,7 @@ The command for running the same thing on a real server is very similar.
 
 If everything goes well, we can now observe the progress of our experiment, running on a managed server, right in the dashboard.
 
-Go to https://missinglink.ai/console and click the Resource Groups toolbar button on the left. You should see a newly created resource group representing our local emulated server.
+Go to https://missinglink.ai/console and click the Resource Groups toolbar button on the left. You should see a newly created resource group representing our local emulated server. If you don't see it yet, the MissingLink CLI is still preparing it.
 
 ![Local resource group](../images/local_resource_group.png)
 
@@ -297,9 +297,13 @@ This resource group is temporary and will disappear from the list once the job w
 
 ---
 
-Click on the line showing the emulated server. You are taken to a view of the logs of the task running in our local server.
+If you click the Jobs toolbar button on the left, you should see a newly created job.
 
-<!--- TODO: Add a gif showing the progress of the logs --->
+![Job in jobs list](../images/jobs_list.png)
+
+Click on the line showing the job. You are taken to a view of the logs of the task running in our local server.
+
+![Job logs](../images/job_logs.png)
 
 Let's see the actual progress of our experiment. Click the projects toolbar button on the left and choose the `tutorials` project. You should see the new experiment's progress.
 
