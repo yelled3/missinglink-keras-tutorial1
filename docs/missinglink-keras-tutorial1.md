@@ -259,11 +259,21 @@ Now for some magic.
 
 We'll need to run a command for launching the local server using the MissingLink CLI. Run the following in your terminal:
 
+<!--- TODO: Remove params when possible  --->
+
 ```bash
-$ ml run local --git-repo git@github.com:<YOUR_GITHUB_USERNAME>/missinglink-keras-tutorial1.git --command "python mnist_cnn.py"
+$ ml run local --org <ORG_NAME> --project <PROJECT_ID> --git-repo git@github.com:<YOUR_GITHUB_USERNAME>/missinglink-keras-tutorial1.git --cpu --image tensorflow/tensorflow:1.9.0-devel --command "python mnist_cnn.py"
 ```
 
-This command takes the code you've committed to your forked repository, clones it to your local server, installs the requirements, and runs `python mnist_cnn.py`.
+This command takes the code you've committed to your forked repository, clones it to your local server, installs the requirements, and runs the expriment.  
+Let's go over and explain all the options in the previous command:
+
+`--org`: The name of the organization, taken from the previous step  
+`--project`: The id of the project, taken from the previous step  
+`--git-repo`: A git url that should be cloned to the server  
+`--cpu`: Use the on your workstation. If your workstation has a supported GPU, you can specify `--gpu` instead  
+`--image`: The docker image to use. If your workstation has a supported GPU, you can skip this parameter to use the default docker image
+`--command`: The command to run (from the root of your source code)
 
 ---
 **NOTE**
