@@ -10,6 +10,8 @@ We start with a [code sample](https://github.com/keras-team/keras/blob/master/ex
 
 To run this tutorial you will need a MissingLink account. If you don't have one, please [head to the MissingLink website and sign up](https://missinglink.ai/console/signup/userdetails).
 
+You will also need to have [Python](https://www.python.org/downloads/) and [Docker](https://docs.docker.com/install/#supported-platforms) installed on your workstation.
+
 ---
 **NOTE**
 
