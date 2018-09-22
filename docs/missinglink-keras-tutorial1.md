@@ -142,8 +142,6 @@ epochs = 12
 
 Now we need to initialize a callback object that Keras will call during the different stages of the experiment:
 
-<!--- TODO: Make sure it works without user id and project id / token) --->
-
 ```diff
 // ...
 from keras.layers import Conv2D, MaxPooling2D
@@ -240,9 +238,6 @@ $ git push
 # Adding Resource Management
 
 Now that we have everything working on our local workstation, let's take the integration to the next level. 
-<!--- TODO: Link to a good RM explanation --->
-
-<!--- Moshe: which page can we link to in RM docs? --->
 
 The next step for us would be to run the experiment on a managed server. 
 MissingLink can help you manage your servers, so that you don't have to worry about it.
