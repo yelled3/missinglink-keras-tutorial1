@@ -255,6 +255,21 @@ The most important step for setting up Resource Management in your project would
 
 ## Let's emulate
 
+For this step we will need to take a note of the name of our organization in the MissingLink system, and the ID of the `tutorials` project. Run the following command in the terminal:
+
+```bash
+$ ml projects list
+```
+
+You should get a list of all the projects you have access to. Look for the `tutorials` project:
+
+```bash
+project_id   | display_name | description | token        | org
+<PROJECT_ID>   tutorials                    <SOME_TOKEN>   <YOUR_ORG>
+```
+
+Take a note of the project ID of the `tutorials` project, as well as the name of the organization this project belongs to.
+
 Now for some magic.
 
 We'll need to run a command for launching the local server using the MissingLink CLI. Run the following in your terminal:
