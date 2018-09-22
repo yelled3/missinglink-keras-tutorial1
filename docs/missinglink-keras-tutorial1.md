@@ -307,4 +307,8 @@ Click on the line showing the job. You are taken to a view of the logs of the ta
 
 Let's see the actual progress of our experiment. Click the projects toolbar button on the left and choose the `tutorials` project. You should see the new experiment's progress.
 
-<!--- Moshe: Screenshots have the name Elad Shaham. OK? --->
+# Summary
+
+This tutorial demonstrated how you take an existing deep learning code sample, integrate the MissingLink SDK, and run it on an emulated local server.  
+
+To learn more about what you can do with MissingLink, please head to the [docs section](https://missinglink.ai/docs) on the MissingLink website.
