@@ -247,7 +247,7 @@ Now that we have everything working on our local workstation, let's take the int
 The next step for us would be to run the experiment on a managed server. 
 MissingLink can help you manage your servers, so that you don't have to worry about it.
 
-For the sake of simplicity, we will not connect real GPU servers in this tutorial, but rather emulate a real server on our local workstation. This all should definitely give you a sense of how it would work when running on real servers.
+For the sake of simplicity, we will not connect real GPU servers in this tutorial, but rather emulate a real server on our local workstation. This should definitely give you a sense of how it would work when running on real servers.
 
 ## The missing step
 
