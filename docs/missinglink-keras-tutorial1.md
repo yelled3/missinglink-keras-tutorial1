@@ -121,12 +121,6 @@ keras
 +missinglink
 ```
 
-Now install the new requirements:
-
-```bash
-$ pip install -r requirements.txt
-```
-
 ## Create the experiment in MissingLink
 
 Open the `mnist_cnn.py` script file and import the MissingLink SDK:
