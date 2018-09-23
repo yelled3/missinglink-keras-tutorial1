@@ -76,7 +76,7 @@ MissingLink provides a command line interface (CLI) that allows you to control e
 Let's go ahead and install it:
 
 ```bash
-$ pip install MissingLink
+$ pip install missinglink
 ```
 
 Next, authenticate with the MissingLink backend.
