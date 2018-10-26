@@ -314,6 +314,10 @@ Click on the line showing the job. You are taken to a view of the logs of the ta
 
 Let's see the actual progress of our experiment. Click the projects toolbar button on the left and choose the **tutorials** project. You should see the new experiment's progress.
 
+# Troubleshooting
+
+If you see the error `Exception: URL fetch failure on https://s3.amazonaws.com/img-datasets/mnist.npz: None -- [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:847)` then you might need to install certificates. See https://stackoverflow.com/a/42334357/177498
+
 # Summary
 
 This tutorial demonstrated how you take an existing deep learning code sample, integrate the MissingLink SDK, and run it on an emulated local server.  
