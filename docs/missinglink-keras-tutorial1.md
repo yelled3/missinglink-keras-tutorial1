@@ -316,7 +316,7 @@ Let's see the actual progress of our experiment. Click the projects toolbar butt
 
 # Troubleshooting
 
-If you see the error `Exception: URL fetch failure on https://s3.amazonaws.com/img-datasets/mnist.npz: None -- [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:847)` then you might need to install certificates. See https://stackoverflow.com/a/42334357/177498
+For Mac users running python 3.6 on Mac there is a known certificate issue unrelated to MissingLinK. If you see the error `Exception: URL fetch failure on https://s3.amazonaws.com/img-datasets/mnist.npz: None -- [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:847)` then you might need to install certificates. The commandline mentioned in this answer should solve the problem: https://stackoverflow.com/a/42334357/177498
 
 # Summary
 
