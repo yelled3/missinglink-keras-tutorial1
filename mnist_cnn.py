@@ -12,6 +12,9 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
+import missinglink
+
+missinglink_callback = missinglink.KerasCallback()
 
 batch_size = 128
 num_classes = 10
@@ -64,7 +67,11 @@ model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=epochs,
           verbose=1,
-          validation_data=(x_test, y_test))
-score = model.evaluate(x_test, y_test, verbose=0)
-print('Test loss:', score[0])
-print('Test accuracy:', score[1])
+          validation_data=(x_test, y_test),
+          callbacks=[missinglink_callback])
+
+with missinglink_callback.test(model):
+    score = model.evaluate(x_test, y_test, verbose=0)
+
+    print('Test loss:', score[0])
+    print('Test accuracy:', score[1])
